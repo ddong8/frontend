@@ -42,7 +42,7 @@ export const SocketProvider: React.FC<SocketProviderProps> = ({ children }) => {
     useEffect(() => {
         console.info(`[SocketContext] 正在初始化 Socket 连接，目标服务器: ${SOCKET_SERVER_URL}`);
         const newSocketInstance: Socket = io(SOCKET_SERVER_URL, {
-            path: "/ws/socket.io",          // 后端 Socket.IO 服务的挂载路径
+            path: "/ws",          // 后端 Socket.IO 服务的挂载路径
             transports: ['websocket'],      // 优先使用 WebSocket 传输
             autoConnect: false,             // 不在实例创建时自动连接
             reconnectionAttempts: 5,        // 自动重连尝试次数
